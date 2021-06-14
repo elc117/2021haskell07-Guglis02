@@ -6,6 +6,22 @@ totalWidth = 500
 totalHeight :: Int
 totalHeight = 100
 
+-- Verifica se a string recebida como argumento contém apenas caracteres '0' ou '1'. 
+-- A função retornará False se houver qualquer outro caracter.
+isBin :: String -> Bool 
+isBin str = (length filtrada) == (length str)
+  where filtrada = filter (\c -> elem c "01") str
+
+-- Dada uma lista de caracteres, retorna cada caracter numa tupla numerada de 0 em diante.
+bitPos :: String -> [(Char,Int)]
+bitPos str = zip str [0..]
+
+-- Recebe uma string com caracteres '0' ou '1' e um valor para o gap. 
+-- Chama as funções bar ou flipbar, respectivamente para um caracter '0' ou '1'.
+-- O resultado da função será uma lista com coordenadas de barras, considerando a posição de cada bit na string
+--altBarList :: String -> Int -> [((Int,Int),(Int,Int))]
+--altBarList str gap = [(x,y)|x <- [0,gap..], y ]
+
 -- Gera string representando um documento SVG completo
 -- dadas suas dimensões e uma lista de strings com tags
 svgDoc :: Int -> Int -> [String] -> String
